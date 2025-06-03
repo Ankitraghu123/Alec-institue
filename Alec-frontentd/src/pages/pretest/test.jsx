@@ -62,14 +62,14 @@ const CourseForm = () => {
     if (!formData.Price) newErrors.Price = 'Price is required';
     if (!formData.testmodule) newErrors.testmodule = 'Module name is required';
     if (!formData.CourseDescription) newErrors.CourseDescription = 'Description is required';
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!validateForm()) return;
 
     const data = new FormData();
@@ -82,7 +82,7 @@ const CourseForm = () => {
 
     try {
       setLoading(true);
-      const response = await axios.post('http://localhost:8000/test/create', data, {
+      const response = await axios.post('https://alec-institue.onrender.com/test/create', data, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -205,7 +205,7 @@ const CourseForm = () => {
                 onChange={handleEditorChange}
                 config={{
                   toolbar: [
-                    'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 
+                    'heading', '|', 'bold', 'italic', 'link', 'bulletedList',
                     'numberedList', 'blockQuote', 'insertTable', 'undo', 'redo'
                   ]
                 }}

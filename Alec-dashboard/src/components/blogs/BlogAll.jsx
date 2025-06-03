@@ -25,7 +25,7 @@
 
 //   const fetchBlogs = async () => {
 //     try {
-//       const response = await fetch('http://localhost:8000/blog/display');
+//       const response = await fetch('https://alec-institue.onrender.com/blog/display');
 //       if (!response.ok) {
 //         throw new Error('Failed to fetch blogs');
 //       }
@@ -120,7 +120,7 @@
 //     },
 //   ];
 
-  
+
 
 //   return (
 //     <section id="margin-top">
@@ -174,7 +174,7 @@ export const BlogAll = () => {
 
   const fetchBlogs = async () => {
     try {
-      const response = await fetch('http://localhost:8000/blog/display');
+      const response = await fetch('https://alec-institue.onrender.com/blog/display');
       if (!response.ok) {
         throw new Error('Failed to fetch blogs');
       }
@@ -303,7 +303,7 @@ export const BlogAll = () => {
         <div className="row td_gap_y_30">
           {displayBlogs.map((blog, index) => {
             // Format date from LastDate if it exists
-            const blogDate = blog.LastDate 
+            const blogDate = blog.LastDate
               ? new Date(blog.LastDate).toLocaleDateString('en-GB', {
                   day: 'numeric',
                   month: 'short',
@@ -312,15 +312,15 @@ export const BlogAll = () => {
               : blog.date || "No date";
 
             // Use first image from images array if available, otherwise use fallback image
-            const blogImage = Array.isArray(blog.images) && blog.images.length > 0 
-              ? blog.images[0] 
+            const blogImage = Array.isArray(blog.images) && blog.images.length > 0
+              ? blog.images[0]
               : blog.image || post1;
 
             return (
               <div className="col-lg-4" key={blog._id || index}>
                 {/* {console.log(blog._id, "kkk")} */}
-              
-                <BlogItem 
+
+                <BlogItem
                   image={blogImage}
                   date={blogDate}
                   author={blog.author || "Unknown Author"}
@@ -328,7 +328,7 @@ export const BlogAll = () => {
                   excerpt={blog.excerpt  || "No excerpt available"}
                   blogId={blog._id}
                 />
-            
+
               </div>
             );
           })}

@@ -16,7 +16,7 @@
 //     useEffect(() => {
 //       const fetchCourses = async () => {
 //         try {
-//           const response = await fetch('http://localhost:8000/judement/display');
+//           const response = await fetch('https://alec-institue.onrender.com/judement/display');
 //           if (!response.ok) {
 //             throw new Error('Failed to fetch courses');
 //           }
@@ -28,7 +28,7 @@
 //           setLoading(false);
 //         }
 //       };
-  
+
 //       fetchCourses();
 //     }, []);
 
@@ -137,7 +137,7 @@
 //   useEffect(() => {
 //     const fetchCourses = async () => {
 //       try {
-//         const response = await fetch('http://localhost:8000/judement/display');
+//         const response = await fetch('https://alec-institue.onrender.com/judement/display');
 //         if (!response.ok) {
 //           throw new Error('Failed to fetch courses');
 //         }
@@ -177,7 +177,7 @@
 //               <div>
 //                 <p>{course.subTitle}.</p>
 //               </div>
-              
+
 //               <div className="td_card_btns_wrap justify-content-between ">
 //                 <Link
 //                   to="/blog-details"
@@ -222,7 +222,7 @@ export const CoursesAllList = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await fetch('http://localhost:8000/judement/display');
+        const response = await fetch('https://alec-institue.onrender.com/judement/display');
         if (!response.ok) {
           throw new Error('Failed to fetch courses');
         }
@@ -264,7 +264,7 @@ export const CoursesAllList = () => {
               <div>
                 <p>{course.subTitle}.</p>
               </div>
-              
+
               <div className="td_card_btns_wrap justify-content-between">
                 <div
                   className="td_btn td_style_1 td_type_3 td_radius_10 td_medium td_fs_14"

@@ -12,7 +12,7 @@ const Eventdisplay = () => {
 
   const fetchContacts = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/event');
+      const response = await axios.get('https://alec-institue.onrender.com/event');
       setContacts(response.data);
       setIsLoading(false);
     } catch (error) {
@@ -29,7 +29,7 @@ const Eventdisplay = () => {
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this contact?')) return;
     try {
-      await axios.delete(`http://localhost:8000/event/${id}`);
+      await axios.delete(`https://alec-institue.onrender.com/event/${id}`);
       setMessage({ text: 'Contact deleted successfully', type: 'success' });
       fetchContacts();
     } catch (error) {
@@ -51,12 +51,12 @@ const Eventdisplay = () => {
   const handleSubmit = async (formData) => {
     try {
       if (editingContact) {
-        await axios.put(`http://localhost:8000/event/${editingContact._id}`, formData, {
+        await axios.put(`https://alec-institue.onrender.com/event/${editingContact._id}`, formData, {
           headers: { 'Content-Type': 'multipart/form-data' }
         });
         setMessage({ text: 'Contact updated successfully', type: 'success' });
       } else {
-        await axios.post('http://localhost:8000/event', formData, {
+        await axios.post('https://alec-institue.onrender.com/event', formData, {
           headers: { 'Content-Type': 'multipart/form-data' }
         });
         setMessage({ text: 'Contact created successfully', type: 'success' });
@@ -116,7 +116,7 @@ const Eventdisplay = () => {
       )}
 
       <div className="flex justify-between items-center mb-4">
-       
+
 
         <input
           type="text"
@@ -128,10 +128,10 @@ const Eventdisplay = () => {
       </div>
 
       {isFormOpen && (
-        <ContactForm 
-          initialData={editingContact} 
-          onSubmit={handleSubmit} 
-          onCancel={handleFormClose} 
+        <ContactForm
+          initialData={editingContact}
+          onSubmit={handleSubmit}
+          onCancel={handleFormClose}
         />
       )}
 

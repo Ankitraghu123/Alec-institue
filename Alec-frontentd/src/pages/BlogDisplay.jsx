@@ -16,7 +16,7 @@ const BlogDisplay = () => {
 
   const fetchBlogs = async () => {
     try {
-      const response = await fetch('http://localhost:8000/blog/display');
+      const response = await fetch('https://alec-institue.onrender.com/blog/display');
       if (!response.ok) {
         throw new Error('Failed to fetch blogs');
       }
@@ -41,7 +41,7 @@ const BlogDisplay = () => {
     if (!confirm) return;
 
     try {
-      const response = await fetch(`http://localhost:8000/blog/${id}`, {
+      const response = await fetch(`https://alec-institue.onrender.com/blog/${id}`, {
         method: 'DELETE',
       });
 

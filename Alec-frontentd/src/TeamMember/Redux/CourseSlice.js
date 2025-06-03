@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const createCourse = createAsyncThunk('course/createCourse', async (formData) => {
-  const response = await axios.post('http://localhost:8000/api/course', formData, {
+  const response = await axios.post('https://alec-institue.onrender.com/api/course', formData, {
     headers: { 'Content-Type': 'multipart/form-data' },
   });
   return response.data;

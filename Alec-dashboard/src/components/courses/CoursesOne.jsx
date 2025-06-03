@@ -26,7 +26,7 @@ export const CoursesOne = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await fetch('http://localhost:8000/api/allcourse');
+        const response = await fetch('https://alec-institue.onrender.com/api/allcourse');
         if (!response.ok) {
           throw new Error('Failed to fetch courses');
         }
@@ -95,12 +95,12 @@ export const CoursesOne = () => {
         >
           {courses.map((course, idx) => (
             <SwiperSlide key={course._id || idx}>
-              <div 
+              <div
                 className="course-item"
                 onClick={() => handleCourseClick(course._id)}
                 style={{ cursor: 'pointer' }}
               >
-                <CoursesOneItem 
+                <CoursesOneItem
                   // src={images[idx % images.length]}
                   src={Array.isArray(course.images) ? course.images[0] : course.images}
                   seats={course.Price || 100}
@@ -136,7 +136,7 @@ export default CoursesOne;
 
 // export const CoursesOne = () => {
 //   const [courses, setCourses] = useState([]);
-//   const api = 'http://localhost:8000/api/allcourse';
+//   const api = 'https://alec-institue.onrender.com/api/allcourse';
 
 //   useEffect(() => {
 //     const fetchCourses = async () => {
@@ -163,7 +163,7 @@ export default CoursesOne;
 //       <h2 className="td_section_title td_fs_30 mb-0">Academic Courses</h2>
 //     </div>
 //     <div className="td_height_20 td_height_lg_20" /> {/* reduced from 30 */}
-    
+
 //     <Swiper
 //       modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
 //       spaceBetween={20}

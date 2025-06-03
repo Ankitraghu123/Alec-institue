@@ -10,7 +10,7 @@
 
 //     const fetchAllURLs = async () => {
 //         try {
-//             const response = await axios.get('http://localhost:8000/url/display');
+//             const response = await axios.get('https://alec-institue.onrender.com/url/display');
 //             setUrls(response.data.data);
 //         } catch (err) {
 //             setError(err.message);
@@ -21,7 +21,7 @@
 
 //     const fetchURLById = async (id) => {
 //         try {
-//             const response = await axios.get(`http://localhost:8000/url/${id}`);
+//             const response = await axios.get(`https://alec-institue.onrender.com/url/${id}`);
 //             setSelectedURL(response.data);
 //         } catch (err) {
 //             setError(err.message);
@@ -33,7 +33,7 @@
 //         if (!confirmDelete) return;
 
 //         try {
-//             await axios.delete(`http://localhost:8000/url/${id}`);
+//             await axios.delete(`https://alec-institue.onrender.com/url/${id}`);
 //             fetchAllURLs(); // Refresh list after deletion
 //         } catch (err) {
 //             setError(err.message);

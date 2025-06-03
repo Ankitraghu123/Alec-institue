@@ -9,15 +9,15 @@
 // import avatar1 from "../../assets/alec-img/testi/aryan.jpg";
 
 // export const BlogDetails = ({courseId}) => {
-//    const navigate = useNavigate()  
+//    const navigate = useNavigate()
 //     const { id } = useParams();
 //      const [product, setProduct] = useState([]);
-//      const [error, setError] = useState(false); 
-     
-  
+//      const [error, setError] = useState(false);
+
+
 //   const [loading, setLoading] = useState(false)
 
-  
+
 //    useEffect(() => {
 //     if (courseId) {
 //       axios.get(`/blog/display/${courseId}`).then((res) => {
@@ -30,7 +30,7 @@
 //     const fetchProduct = async () => {
 //       try {
 //         setLoading(true);
-//         const res = await axios.get(`http://localhost:8000/blog/${id}`);
+//         const res = await axios.get(`https://alec-institue.onrender.com/blog/${id}`);
 //         console.log(res)
 //         setProduct(res.data);
 //       } catch (err) {
@@ -241,7 +241,7 @@ export const BlogDetails = ({ courseId }) => {
     const fetchProduct = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`http://localhost:8000/blog/${id}`);
+        const res = await axios.get(`https://alec-institue.onrender.com/blog/${id}`);
         setProduct(res.data);
       } catch (err) {
         console.error("Failed to fetch product", err);
@@ -290,8 +290,8 @@ export const BlogDetails = ({ courseId }) => {
           {/* <img  src={Array.isArray(product.images) ? product.images[0] : product.images} alt="Blog Details" /> */}
        <div className="embed-responsive embed-responsive-16by9 td_radius_10 td_mb_40">
                 <iframe
-                
-              
+
+
                   className="embed-responsive-item"
                   src={product.URL}
                   allowFullScreen

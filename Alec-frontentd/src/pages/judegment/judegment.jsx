@@ -99,7 +99,7 @@ const Judgement = () => {
     });
 
     try {
-      await axios.post('http://localhost:8000/judement/create', formDataToSend, {
+      await axios.post('https://alec-institue.onrender.com/judement/create', formDataToSend, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 

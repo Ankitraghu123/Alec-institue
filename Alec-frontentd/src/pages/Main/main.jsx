@@ -76,7 +76,7 @@ const MainForm = () => {
 
     try {
       setLoading(true);
-      const response = await axios.post('http://localhost:8000/main/create', data, {
+      const response = await axios.post('https://alec-institue.onrender.com/main/create', data, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

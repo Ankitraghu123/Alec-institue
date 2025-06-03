@@ -4,7 +4,7 @@ import axios from 'axios';
 
 // Add new URL
 export const addUrl = createAsyncThunk('urls/addUrl', async (urlData) => {
-  const response = await axios.post('http://localhost:8000/url/create', urlData);
+  const response = await axios.post('https://alec-institue.onrender.com/url/create', urlData);
   return response.data;
 });
 
@@ -13,7 +13,7 @@ export const fetchAllUrls = createAsyncThunk(
   'urls/fetchAll',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get('http://localhost:8000/url/display');
+      const response = await axios.get('https://alec-institue.onrender.com/url/display');
       return response.data.data;
     } catch (error) {
       return rejectWithValue(error.response?.data || error.message);
@@ -25,7 +25,7 @@ export const fetchUrlById = createAsyncThunk(
   'urls/fetchById',
   async (id, { rejectWithValue }) => {
     try {
-      const response = await axios.get(`http://localhost:8000/url/${id}`);
+      const response = await axios.get(`https://alec-institue.onrender.com/url/${id}`);
       return response.data.data;
     } catch (error) {
       return rejectWithValue(error.response?.data || error.message);
@@ -38,7 +38,7 @@ export const deleteUrl = createAsyncThunk(
   'urls/delete',
   async (id, { rejectWithValue }) => {
     try {
-      await axios.delete(`http://localhost:8000/url/${id}`);
+      await axios.delete(`https://alec-institue.onrender.com/url/${id}`);
       return id;
     } catch (error) {
       return rejectWithValue(error.response?.data || error.message);

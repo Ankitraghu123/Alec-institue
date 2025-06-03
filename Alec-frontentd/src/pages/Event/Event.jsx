@@ -52,7 +52,7 @@ const Event = () => {
 
     try {
       const formDataToSend = new FormData();
-      
+
       // Append all form fields
       Object.keys(formData).forEach(key => {
         if (key !== 'images') {
@@ -65,7 +65,7 @@ const Event = () => {
         formDataToSend.append('images', file);
       });
 
-      const response = await axios.post('http://localhost:8000/event/', formDataToSend, {
+      const response = await axios.post('https://alec-institue.onrender.com/event/', formDataToSend, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -88,9 +88,9 @@ const Event = () => {
       setPreviewUrls([]);
     } catch (error) {
       console.error('Error creating contact:', error);
-      setMessage({ 
-        text: error.response?.data?.error || 'Failed to create contact', 
-        type: 'error' 
+      setMessage({
+        text: error.response?.data?.error || 'Failed to create contact',
+        type: 'error'
       });
     } finally {
       setIsSubmitting(false);
@@ -100,7 +100,7 @@ const Event = () => {
   return (
     <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md">
       <h2 className="text-2xl font-bold mb-6 text-gray-800">Create New Contact</h2>
-      
+
       {message.text && (
         <div className={`mb-4 p-3 rounded ${message.type === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
           {message.text}
@@ -221,14 +221,14 @@ const Event = () => {
             className="w-full px-3 py-2 border rounded-md"
             accept="image/*"
           />
-          
+
           {previewUrls.length > 0 && (
             <div className="mt-4 flex flex-wrap gap-2">
               {previewUrls.map((url, index) => (
                 <div key={index} className="relative">
-                  <img 
-                    src={url} 
-                    alt={`Preview ${index}`} 
+                  <img
+                    src={url}
+                    alt={`Preview ${index}`}
                     className="h-20 w-20 object-cover rounded-md"
                   />
                   <button

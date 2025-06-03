@@ -41,8 +41,8 @@ export const Contact = () => {
     setSubmitStatus(null);
 
     try {
-      const response = await axios.post("http://localhost:8000/contact/add", formData);
-      
+      const response = await axios.post("https://alec-institue.onrender.com/contact/add", formData);
+
       console.log("API Response:", response.data);
       setSubmitStatus({
         success: true,
@@ -143,7 +143,7 @@ export const Contact = () => {
 
                   <div className="mb-4">
                     <ReCAPTCHA sitekey={SITE_KEY} onChange={handleCaptcha} />
-                    
+
                   </div>
 
                   <button

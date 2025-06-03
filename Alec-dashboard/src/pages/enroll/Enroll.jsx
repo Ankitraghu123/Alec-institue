@@ -28,12 +28,12 @@
 //       setErrors(prev => ({ ...prev, [name]: "" }));
 //     }
 //   };
-  
+
 
 //    const loadProducts=async()=>{
 
 //     try {
-//       const response = await axios.get(`http://localhost:8000/enroll/getproducts/${id}`);
+//       const response = await axios.get(`https://alec-institue.onrender.com/enroll/getproducts/${id}`);
 //       const prodductData= response.data;
 //       setProductData(prodductData);
 //     } catch (error) {
@@ -44,7 +44,7 @@
 //   useEffect(()=>{
 //     loadProducts();
 //   },[]);
-  
+
 //   return (
 //       <Layout header={9} footer={1}>
 //          <section id="margin-top" className="contact-section py-5 bg-light">
@@ -57,8 +57,8 @@
 //                     <form>
 //                       <div className="mb-3">
 //                         <label className="form-label fw-semibold">Full Name</label>
-//                         <input type="text" className="form-control" placeholder="Enter your name" required 
-                        
+//                         <input type="text" className="form-control" placeholder="Enter your name" required
+
 //                     id="name"
 //                     name="name"
 //                     value={formData.name}
@@ -67,8 +67,8 @@
 //                       </div>
 //                       <div className="mb-3">
 //                         <label className="form-label fw-semibold">Email</label>
-//                         <input type="email" className="form-control" placeholder="Enter your email" required 
-                        
+//                         <input type="email" className="form-control" placeholder="Enter your email" required
+
 //                     id="email"
 //                     name="email"
 //                     value={formData.email}
@@ -77,8 +77,8 @@
 //                       </div>
 //                       <div className="mb-3">
 //                         <label className="form-label fw-semibold">Phone</label>
-//                         <input type="tel" className="form-control" placeholder="Enter your phone number" required 
-                       
+//                         <input type="tel" className="form-control" placeholder="Enter your phone number" required
+
 //                     id="phone"
 //                     name="phone"
 //                     value={formData.phone}
@@ -88,8 +88,8 @@
 
 //                       <div className="mb-3">
 //                         <label className="form-label fw-semibold">City</label>
-//                         <input type="text" className="form-control" placeholder="Enter your City" required 
-                        
+//                         <input type="text" className="form-control" placeholder="Enter your City" required
+
 //                     id="city"
 //                     name="city"
 //                     value={formData.city}
@@ -158,7 +158,7 @@ export const Enroll = () => {
   useEffect(() => {
     const loadProducts = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/enroll/getproducts/${id}`);
+        const response = await axios.get(`https://alec-institue.onrender.com/enroll/getproducts/${id}`);
         setProductData(response.data);
       } catch (error) {
         console.error("Error loading product data:", error);
@@ -201,7 +201,7 @@ export const Enroll = () => {
     }
 
     try {
-      const response = await axios.post(`http://localhost:8000/enroll/${id}`, formData);
+      const response = await axios.post(`https://alec-institue.onrender.com/enroll/${id}`, formData);
       console.log("Form submitted successfully:", response.data);
       alert("Enrollment submitted successfully!");
 

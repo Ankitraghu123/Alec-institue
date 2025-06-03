@@ -29,7 +29,7 @@
 //   const handleImageChange = (e) => {
 //     const files = Array.from(e.target.files);
 //     const maxImages = 5;
-    
+
 //     if (files.length + imageFiles.length > maxImages) {
 //       setError(`You can upload a maximum of ${maxImages} images`);
 //       return;
@@ -94,7 +94,7 @@
 //     imageFiles.forEach((file) => formData.append('images', file));
 
 //     try {
-//       const api = 'http://localhost:8000/choose/create';
+//       const api = 'https://alec-institue.onrender.com/choose/create';
 //       await axios.post(api, formData, {
 //         headers: { 'Content-Type': 'multipart/form-data' },
 //       });
@@ -116,7 +116,7 @@
 //     } catch (err) {
 //       console.error('Submission error:', err);
 //       toast.error(
-//         err.response?.data?.message || 
+//         err.response?.data?.message ||
 //         'Submission failed. Please try again.'
 //       );
 //     } finally {

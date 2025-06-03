@@ -170,7 +170,7 @@ const WhatsNewForm = () => {
 
     try {
       setLoading(true);
-      const response = await axios.post('http://localhost:8000/whatsnew/create', formData, {
+      const response = await axios.post('https://alec-institue.onrender.com/whatsnew/create', formData, {
         headers: {
           Accept: 'application/json',
         },

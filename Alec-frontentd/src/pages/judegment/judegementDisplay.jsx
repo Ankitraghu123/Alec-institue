@@ -15,7 +15,7 @@ const JudgementDisplay = () => {
   useEffect(() => {
     const fetchJudgements = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/judement/display');
+        const response = await axios.get('https://alec-institue.onrender.com/judement/display');
         setJudgements(response.data);
         setLoading(false);
       } catch (err) {
@@ -29,7 +29,7 @@ const JudgementDisplay = () => {
   const deleteJudgement = async (id) => {
     if (!window.confirm('Are you sure you want to delete this judgement?')) return;
     try {
-      await axios.delete(`http://localhost:8000/judement/${id}`);
+      await axios.delete(`https://alec-institue.onrender.com/judement/${id}`);
       setJudgements(prev => prev.filter(j => j._id !== id));
     } catch (err) {
       alert('Failed to delete judgement');
@@ -68,8 +68,8 @@ const JudgementDisplay = () => {
 
   const getSortIcon = (key) => {
     if (sortConfig.key !== key) return null;
-    return sortConfig.direction === 'asc' ? 
-      <ChevronUp className="inline ml-1 h-4 w-4" /> : 
+    return sortConfig.direction === 'asc' ?
+      <ChevronUp className="inline ml-1 h-4 w-4" /> :
       <ChevronDown className="inline ml-1 h-4 w-4" />;
   };
 

@@ -6,10 +6,10 @@
 // import eventThumb5 from "../../assets/img/home_1/event_thumb_5.jpg";
 
 // export const EventDetailsContent = () => {
-//     const navigate = useNavigate()  
+//     const navigate = useNavigate()
 //   const { id } = useParams();
 //    const [product, setProduct] = useState([]);
-//    const [error, setError] = useState(false); 
+//    const [error, setError] = useState(false);
 
 // const [loading, setLoading] = useState(false)
 
@@ -23,7 +23,7 @@
 //     }
 //   }, [contactId]);
 
-  
+
 
 
 
@@ -31,7 +31,7 @@
 //     const fetchProduct = async () => {
 //       try {
 //         setLoading(true);
-//         const res = await axios.get(`http://localhost:8000/event/${id}`);
+//         const res = await axios.get(`https://alec-institue.onrender.com/event/${id}`);
 //         console.log(res)
 //         setProduct(res.data);
 //       } catch (err) {
@@ -436,7 +436,7 @@ export const EventDetailsContent = () => {
     const fetchEvent = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`http://localhost:8000/event/${id}`);
+        const res = await axios.get(`https://alec-institue.onrender.com/event/${id}`);
         setEvent(res.data);
       } catch (err) {
         console.error("Failed to fetch event", err);
@@ -453,11 +453,11 @@ export const EventDetailsContent = () => {
   if (!event) return <div>Event not found</div>;
 
   // Format date for display
-  const formattedDate = event.StartDate 
-    ? new Date(event.StartDate).toLocaleDateString('en-US', { 
-        month: 'short', 
-        day: 'numeric', 
-        year: 'numeric' 
+  const formattedDate = event.StartDate
+    ? new Date(event.StartDate).toLocaleDateString('en-US', {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric'
       })
     : 'Date not specified';
 

@@ -9,7 +9,7 @@
 //   { id: 41, name: "Chhattisgarh Civil Judge Syllabus" },
 //   { id: 40, name: "UP Judiciary (UPPCSJ) Syllabus" },
 //   { id: 39, name: "Bihar Judiciary (BPSC Civil Judge Exam) Syllabus" },
-  
+
 // ];
 
 // export const SyllabusDownload = () => {
@@ -183,7 +183,7 @@
 //   useEffect(() => {
 //     const fetchData = async () => {
 //       try {
-//         const res = await axios.get(`http://localhost:8000/syllabus/category/${id}`);
+//         const res = await axios.get(`https://alec-institue.onrender.com/syllabus/category/${id}`);
 //         setSyllabusData(res.data);
 //         setLoading(false);
 //       } catch (err) {
@@ -213,8 +213,8 @@
 //     e.preventDefault();
 //     try {
 //       // Send the form data to your API endpoint
-//       await axios.post("http://localhost:8000/register/add", formData);
-      
+//       await axios.post("https://alec-institue.onrender.com/register/add", formData);
+
 //       console.log("Submitted Data:", formData);
 //       alert(`Download link for ${selectedSyllabus.Coursename} will be sent to ${formData.email}`);
 //       handleCloseModal();
@@ -412,7 +412,7 @@ export const SyllabusDownload = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`http://localhost:8000/syllabus/category/${id}`);
+        const res = await axios.get(`https://alec-institue.onrender.com/syllabus/category/${id}`);
         setSyllabusData(res.data);
       } catch (err) {
         setError(err.message);
@@ -452,8 +452,8 @@ export const SyllabusDownload = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8000/register/add", formData);
-      
+      await axios.post("https://alec-institue.onrender.com/register/add", formData);
+
       if (selectedSyllabus?.pdfUrl) {
         handleDownloadPdf(selectedSyllabus.pdfUrl, selectedSyllabus.Coursename);
       }
@@ -477,15 +477,15 @@ export const SyllabusDownload = () => {
           <div className="row">
             <div className="col-md-12" style={{marginTop:"100px"}}>
               <div className="cart_wrapper">
-                
+
                 <SyllabusTable syllabusData={syllabusData} onDownloadClick={handleShowModal} />
               </div>
             </div>
           </div>
 
-          <DownloadModal 
-            show={showModal} 
-            onHide={handleCloseModal} 
+          <DownloadModal
+            show={showModal}
+            onHide={handleCloseModal}
             onSubmit={handleSubmit}
             formData={formData}
             onInputChange={handleInputChange}

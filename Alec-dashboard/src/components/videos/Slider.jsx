@@ -15,7 +15,7 @@
 
 // export const Slider = () => {
 
-  
+
 
 
 
@@ -121,7 +121,7 @@ export const Slider = () => {
   useEffect(() => {
     const fetchStories = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/url/display");
+        const response = await axios.get("https://alec-institue.onrender.com/url/display");
         setStories(response.data.data);
         console.log(stories,'aaaaaaaaaaaaaaaaaaaaaaaaaa')
       } catch (err) {

@@ -50,7 +50,7 @@
 //     const fetchProduct = async () => {
 //       try {
 //         setLoading(true);
-//         const res = await axios.get(`http://localhost:8000/main/maintestseries/${id}`);
+//         const res = await axios.get(`https://alec-institue.onrender.com/main/maintestseries/${id}`);
 //         console.log(res)
 //         setProduct(res.data);
 
@@ -70,7 +70,7 @@
 //     <section>
 //       <div className="td_height_10 td_height_lg_80" />
 //       <div className="container">
-        
+
 //         {product?.map((product, idx) => (
 //           <div className="row td_gap_y_50">
 
@@ -674,7 +674,7 @@ export const Maintestseries = ({ courseId }) => {
     const fetchProduct = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`http://localhost:8000/main/maintestseries/${id}`);
+        const res = await axios.get(`https://alec-institue.onrender.com/main/maintestseries/${id}`);
         setProduct(res.data);
       } catch (err) {
         console.error("Failed to fetch product", err);
@@ -702,7 +702,7 @@ export const Maintestseries = ({ courseId }) => {
                 <h2 className="td_fs_48 td_mb_30">
                   Starting Reputed Education & Build your Skills
                 </h2>
-              
+
                 <div
                   className="td_card_btn mt-2 mb-3"
                   style={{
@@ -719,17 +719,17 @@ export const Maintestseries = ({ courseId }) => {
                         <span>Pre Test Series</span>
                       </span>
                     </Link>
-                    
+
                   </div>
                   <Link to={`/enroll/${courseId}`} className="td_btn td_style_1 td_radius_10 td_medium">
                     <span className="td_btn_in td_white_color td_accent_bg">
                       <span>Enroll Now</span>
                     </span>
                   </Link>
-                
+
                 </div>
                 <div className="td_tabs td_style_1 td_mb_50">
-                 
+
                   <div className="td_tab_body td_fs_18">
                     <div className="td_tab active" id="td_tab_1">
                       {/* <h2 className="td_fs_48 td_mb_20">Courses Descriptions</h2> */}
@@ -851,7 +851,7 @@ export const Maintestseries = ({ courseId }) => {
                         <span>Enroll Now</span>
                       </span>
                     </Link>
-                
+
                     <Link
                       to="/get-offer"
                       className="td_btn td_radius_10 td_medium"

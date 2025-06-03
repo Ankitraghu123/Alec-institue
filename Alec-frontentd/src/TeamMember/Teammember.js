@@ -5,7 +5,7 @@
 // // Add new member
 // export const addMember = createAsyncThunk('members/addMember', async (formData, { rejectWithValue }) => {
 //   try {
-//     const response = await axios.post('http://localhost:8000/member/create', formData, {
+//     const response = await axios.post('https://alec-institue.onrender.com/member/create', formData, {
 //       headers: { 'Content-Type': 'multipart/form-data' },
 //     });
 //     return response.data;
@@ -17,7 +17,7 @@
 // // Fetch all members
 // export const fetchAllMembers = createAsyncThunk('members/fetchAll', async (_, { rejectWithValue }) => {
 //   try {
-//     const response = await axios.get('http://localhost:8000/member/display');
+//     const response = await axios.get('https://alec-institue.onrender.com/member/display');
 //     return response.data.data;
 //   } catch (error) {
 //     return rejectWithValue(error.response?.data || error.message);
@@ -28,7 +28,7 @@
 //   'member/fetchMembers',
 //   async (_, { rejectWithValue }) => {
 //     try {
-//       const response = await axios.get(`http://localhost:8000/member/display`)
+//       const response = await axios.get(`https://alec-institue.onrender.com/member/display`)
 //       return response.data
 //     } catch (error) {
 //       return rejectWithValue(error.response?.data || error.message)
@@ -41,7 +41,7 @@
 //   'member/deleteMember',
 //   async (id, { rejectWithValue }) => {
 //     try {
-//       await axios.delete(`http://localhost:8000/member/${id}`)
+//       await axios.delete(`https://alec-institue.onrender.com/member/${id}`)
 //       return id
 //     } catch (error) {
 //       return rejectWithValue(error.response?.data || error.message)
@@ -127,7 +127,7 @@ import axios from 'axios';
 // Add member
 export const addMember = createAsyncThunk('member/addMember', async (formData, { rejectWithValue }) => {
   try {
-    const response = await axios.post('http://localhost:8000/member/create', formData, {
+    const response = await axios.post('https://alec-institue.onrender.com/member/create', formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
     return response.data;
@@ -139,7 +139,7 @@ export const addMember = createAsyncThunk('member/addMember', async (formData, {
 // Fetch all members
 export const fetchMembers = createAsyncThunk('member/fetchMembers', async (_, { rejectWithValue }) => {
   try {
-    const response = await axios.get('http://localhost:8000/member/display');
+    const response = await axios.get('https://alec-institue.onrender.com/member/display');
     // console.log(response)
     return response.data;
   } catch (error) {
@@ -150,7 +150,7 @@ export const fetchMembers = createAsyncThunk('member/fetchMembers', async (_, { 
 // Delete member
 export const deleteMember = createAsyncThunk('member/deleteMember', async (id, { rejectWithValue }) => {
   try {
-    await axios.delete(`http://localhost:8000/member/${id}`);
+    await axios.delete(`https://alec-institue.onrender.com/member/${id}`);
     return id;
   } catch (error) {
     return rejectWithValue(error.response?.data || error.message);

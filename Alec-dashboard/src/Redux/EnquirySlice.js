@@ -5,7 +5,7 @@ export const submitEnquiry = createAsyncThunk(
   "enquiry/submitEnquiry",
   async (formData, { rejectWithValue }) => {
     try {
-      const response = await axios.post("http://localhost:8000/enquiry/add", formData);
+      const response = await axios.post("https://alec-institue.onrender.com/enquiry/add", formData);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response?.data?.message || "Something went wrong");

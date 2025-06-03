@@ -6,7 +6,7 @@ const CallbackpopShow = () => {
   const [callbackData, setCallbackData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const api = "http://localhost:8000/Callback/allcallback";
+  const api = "https://alec-institue.onrender.com/Callback/allcallback";
 
   useEffect(() => {
     fetchCallbackData();
@@ -32,7 +32,7 @@ const CallbackpopShow = () => {
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this callback entry?")) {
       axios
-        .delete(`http://localhost:8000/Callback/allcallback/${id}`)
+        .delete(`https://alec-institue.onrender.com/Callback/allcallback/${id}`)
         .then(() => {
           // Remove deleted item from state to update UI
           setCallbackData(callbackData.filter((item) => item._id !== id));

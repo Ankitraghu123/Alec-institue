@@ -35,7 +35,7 @@ console.log("banners",banners)
 
 
 
-  
+
 
   const [leadType, setLeadType] = useState("");
   const [editId, setEditId] = useState(null);
@@ -50,7 +50,7 @@ console.log("banners",banners)
     dispatch(CourseName());
   }, [dispatch]);
 
-  
+
   const [formData, setFormData] = useState({
     Name: "",
     Phone: "",
@@ -64,8 +64,8 @@ console.log("banners",banners)
   // useEffect(() => {
   //   const fetchBanners = async () => {
   //     try {
-  //       const response = await axios.get("http://localhost:8000/banner/alldisplay");
-  //       // http://localhost:8000
+  //       const response = await axios.get("https://alec-institue.onrender.com/banner/alldisplay");
+  //       // https://alec-institue.onrender.com
   //       setBanners(response.data);
   //     } catch (error) {
   //       console.error("Error fetching banners:", error);
@@ -90,7 +90,7 @@ console.log("banners",banners)
   // const handleSubmit = async (e) => {
   //   e.preventDefault();
   //   try {
-  //     const response = await axios.post("http://localhost:8000/query/create", formData);
+  //     const response = await axios.post("https://alec-institue.onrender.com/query/create", formData);
   //     console.log(response.data);
   //     alert("Query submitted successfully!");
   //     setFormData({
@@ -323,7 +323,7 @@ const handleSubmit = async (e) => {
                   <div className="mb-4">
                     <ReCAPTCHA sitekey={SITE_KEY} onChange={handleCaptcha} />
                   </div>
-               
+
 
                 <div className="mt-3">
                   <button type="submit" className="form-submit">

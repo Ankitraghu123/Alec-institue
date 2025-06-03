@@ -5,8 +5,8 @@
 // import { useParams } from "react-router-dom";
 
 // export const TeamDetails = () => {
-//    const [product, setProduct] = useState([]);  
-//      const [error, setError] = useState(false); 
+//    const [product, setProduct] = useState([]);
+//      const [error, setError] = useState(false);
 
 // const [loading, setLoading] = useState(false)
 //   const { id } = useParams();
@@ -16,7 +16,7 @@
 //     const fetchProduct = async () => {
 //       try {
 //         setLoading(true);
-//         const res = await axios.get(`http://localhost:8000/member/${id}`);
+//         const res = await axios.get(`https://alec-institue.onrender.com/member/${id}`);
 //         console.log(res)
 //         setProduct(res.data);
 //       } catch (err) {
@@ -190,7 +190,7 @@
 //                 </p>
 //               </div>
 //               <p className="td_fs_18 td_mb_40">
-             
+
 //               </p>
 //               <div className="td_section_heading td_style_2 td_mb_20">
 //                 <h2 className="td_contact_info_title td_fs_36 mb-0">
@@ -269,8 +269,8 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 
 export const TeamDetails = () => {
-  const [member, setMember] = useState({});  
-  const [error, setError] = useState(false); 
+  const [member, setMember] = useState({});
+  const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
 
@@ -278,7 +278,7 @@ export const TeamDetails = () => {
     const fetchMember = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`http://localhost:8000/member/${id}`);
+        const res = await axios.get(`https://alec-institue.onrender.com/member/${id}`);
         setMember(res.data);
       } catch (err) {
         console.error("Failed to fetch member", err);

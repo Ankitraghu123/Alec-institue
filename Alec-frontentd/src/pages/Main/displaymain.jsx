@@ -15,7 +15,7 @@ const MainDisplay = () => {
 
   const fetchCourses = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/main/display');
+      const response = await axios.get('https://alec-institue.onrender.com/main/display');
       setCourses(response.data);
       setLoading(false);
     } catch (error) {
@@ -29,7 +29,7 @@ const MainDisplay = () => {
     const confirmDelete = window.confirm('Are you sure you want to delete this course?');
     if (!confirmDelete) return;
 
-    const deleteApi = `http://localhost:8000/main/${id}`;
+    const deleteApi = `https://alec-institue.onrender.com/main/${id}`;
 
     try {
       await axios.delete(deleteApi);
@@ -110,7 +110,7 @@ const MainDisplay = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-2xl font-bold mb-6">Course Tests</h1>
-      
+
       <div className="mb-4">
         <input
           type="text"

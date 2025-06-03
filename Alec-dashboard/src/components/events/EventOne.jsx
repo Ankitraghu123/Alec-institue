@@ -415,7 +415,7 @@ export const EventOne = () => {
 
   const fetchContacts = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/event");
+      const response = await axios.get("https://alec-institue.onrender.com/event");
       setContacts(response.data);
       setIsLoading(false);
     } catch (error) {
@@ -571,7 +571,7 @@ export const EventOne = () => {
                               : course.images
                             : fallbackImages[(idx + Math.ceil(contacts.length / 2)) % fallbackImages.length]
                         }
-                        
+
                         alt={course.Title || "Event"}
                       />
                       <i className="fa-solid fa-arrow-up-right-from-square"></i>

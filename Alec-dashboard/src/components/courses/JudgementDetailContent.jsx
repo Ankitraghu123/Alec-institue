@@ -40,7 +40,7 @@ export const JudgementDetailContent = ({ children }) => {
 // export const JudgementDetailContent = ({ courseId }) => {
 //   const { id } = useParams();
 //   const [product, setProduct] = useState({});
-//   const [error, setError] = useState(false); 
+//   const [error, setError] = useState(false);
 //   const [loading, setLoading] = useState(false);
 
 //   useEffect(() => {
@@ -54,12 +54,12 @@ export const JudgementDetailContent = ({ children }) => {
 //         });
 //     }
 //   }, [courseId]);
-  
+
 //   useEffect(() => {
 //     const fetchProduct = async () => {
 //       try {
 //         setLoading(true);
-//         const res = await axios.get(`http://localhost:8000/judement/course/${id}`);
+//         const res = await axios.get(`https://alec-institue.onrender.com/judement/course/${id}`);
 //         setProduct(res.data);
 //       } catch (err) {
 //         console.error("Failed to fetch product", err);
@@ -80,9 +80,9 @@ export const JudgementDetailContent = ({ children }) => {
 //         </div>
 //         <div className="row td_row_reverse_lg td_gap_y_50">
 //           <div className="col-lg-6">
-//             <img 
-//               src={product.images?.[0] } 
-//               alt="Blog Details" 
+//             <img
+//               src={product.images?.[0] }
+//               alt="Blog Details"
 //             />
 //           </div>
 //         </div>

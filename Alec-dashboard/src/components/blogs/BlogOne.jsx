@@ -25,7 +25,7 @@ export const BlogOne = () => {
 
   const fetchBlogs = async () => {
     try {
-      const response = await fetch('http://localhost:8000/blog/display');
+      const response = await fetch('https://alec-institue.onrender.com/blog/display');
       if (!response.ok) {
         throw new Error('Failed to fetch blogs');
       }
@@ -134,7 +134,7 @@ export const BlogOne = () => {
         >
           {displayBlogs.map((blog, index) => {
             // Format date from LastDate if it exists
-            const blogDate = blog.LastDate 
+            const blogDate = blog.LastDate
               ? new Date(blog.LastDate).toLocaleDateString('en-GB', {
                   day: 'numeric',
                   month: 'short',
@@ -143,8 +143,8 @@ export const BlogOne = () => {
               : blog.date || "No date";
 
             // Use first image from images array if available, otherwise use fallback image
-            const blogImage = Array.isArray(blog.images) && blog.images.length > 0 
-              ? blog.images[0] 
+            const blogImage = Array.isArray(blog.images) && blog.images.length > 0
+              ? blog.images[0]
               : blog.src || post1;
 
             const delay = `0.${index + 2}s`;
@@ -152,7 +152,7 @@ export const BlogOne = () => {
             return (
               <SwiperSlide key={blog._id || index}>
                 <div className="wow fadeInUp" data-wow-duration="1s" data-wow-delay={delay}>
-                  <BlogOneItem 
+                  <BlogOneItem
                     src={blogImage}
                     date={blogDate}
                     author={blog.author || "Unknown Author"}

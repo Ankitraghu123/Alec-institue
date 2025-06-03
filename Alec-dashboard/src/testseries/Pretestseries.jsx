@@ -50,7 +50,7 @@
 //     const fetchProduct = async () => {
 //       try {
 //         setLoading(true);
-//         const res = await axios.get(`http://localhost:8000/test/preseries/${id}`);
+//         const res = await axios.get(`https://alec-institue.onrender.com/test/preseries/${id}`);
 //         console.log(res)
 //         setProduct(res.data);
 
@@ -675,7 +675,7 @@ export const Pretestseries = ({ courseId }) => {
     const fetchProduct = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`http://localhost:8000/test/preseries/${id}`);
+        const res = await axios.get(`https://alec-institue.onrender.com/test/preseries/${id}`);
         setProduct(res.data);
       } catch (err) {
         console.error("Failed to fetch product", err);
@@ -701,10 +701,10 @@ export const Pretestseries = ({ courseId }) => {
             {/* Content Section */}
             <div className="col-lg-8">
               <div className="td_course_details">
-              
+
                 <div className="td_course_meta td_mb_40">
-                
-                 
+
+
                 </div>
                 <div
                   className="td_card_btn mt-2 mb-3"
@@ -733,15 +733,15 @@ export const Pretestseries = ({ courseId }) => {
                       <span>Enroll Now</span>
                     </span>
                   </Link>
-                
-              
+
+
                 </div>
                 <div className="td_tabs td_style_1 td_mb_50">
                   <ul className="td_tab_links td_style_2 td_type_2 td_mp_0 td_medium td_fs_20 td_heading_color">
                     <li className="active">
                       <a href="#td_tab_1">Overview</a>
                     </li>
-                   
+
                   </ul>
                   <div className="td_tab_body td_fs_18">
                     <div className="td_tab active" id="td_tab_1">
@@ -794,7 +794,7 @@ export const Pretestseries = ({ courseId }) => {
                     <span>Durations:</span>
                     <span className="td_semibold td_accent_color">N/A</span>
                   </li>
-                
+
                 </ul>
                 <div className="td_height_30 td_height_lg_30" />
                 <Link to="/cart" className="td_btn td_style_1 td_radius_10 td_medium w-100">
@@ -819,7 +819,7 @@ export const Pretestseries = ({ courseId }) => {
               {/* Content Section */}
               <div className="col-lg-8">
                 <div className="td_course_details">
-                 
+
                   <div className="td_course_meta td_mb_40">
                     <div className="td_course_avatar">
                       <p className="td_heading_color mb-0 td_medium">
@@ -907,7 +907,7 @@ export const Pretestseries = ({ courseId }) => {
                   </div>
                   <div className="td_tabs td_style_1 td_mb_50">
                     <ul className="td_tab_links td_style_2 td_type_2 td_mp_0 td_medium td_fs_20 td_heading_color">
-                     
+
                     </ul>
                     <div className="td_tab_body td_fs_18">
                       <div className="td_tab active" id="td_tab_1">
@@ -917,8 +917,8 @@ export const Pretestseries = ({ courseId }) => {
                     </div>
                   </div>
                   <h2 className="td_fs_48 td_mb_30">What you'll Learn it?</h2>
-                 
-                 
+
+
                   <div className="td_height_60 td_height_lg_40" />
                   <h4 className="td_fs_24 td_semibold td_mb_20">Requirements</h4>
                   <div className="td_requirements_list td_medium td_fs_18">
@@ -954,7 +954,7 @@ export const Pretestseries = ({ courseId }) => {
                       <span>Durations:</span>
                       <span className="td_semibold td_accent_color">{item.Durations || "N/A"}</span>
                     </li>
-                  
+
                   </ul>
                   <div className="td_height_30 td_height_lg_30" />
                   <Link to="/cart" className="td_btn td_style_1 td_radius_10 td_medium w-100">

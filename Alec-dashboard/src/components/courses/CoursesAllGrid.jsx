@@ -96,11 +96,11 @@
 //     const [loading, setLoading] = useState(true);
 //     const [error, setError] = useState(null);
 //     const navigate = useNavigate();
-  
+
 //     useEffect(() => {
 //       const fetchCourses = async () => {
 //         try {
-//           const response = await fetch('http://localhost:8000/api/allcourse');
+//           const response = await fetch('https://alec-institue.onrender.com/api/allcourse');
 //           if (!response.ok) {
 //             throw new Error('Failed to fetch courses');
 //           }
@@ -112,12 +112,12 @@
 //           setLoading(false);
 //         }
 //       };
-  
+
 //       fetchCourses();
 //     }, []);
 
-    
-  
+
+
 //   return (
 //     <div className="row td_gap_y_30 td_row_gap_30">
 //      {courses.map((course, idx) => (
@@ -220,7 +220,7 @@
 //                  </Link>
 //                </div>
 
-               
+
 //               </div>
 //             </div>
 //           </div>
@@ -252,7 +252,7 @@ export const CoursesAllGrid = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await fetch('http://localhost:8000/api/allcourse');
+        const response = await fetch('https://alec-institue.onrender.com/api/allcourse');
         if (!response.ok) {
           throw new Error('Failed to fetch courses');
         }
@@ -287,9 +287,9 @@ export const CoursesAllGrid = () => {
               </span>
             )}
             <Link to={`/course-details/${course._id}`} className="td_card_thumb">
-              <img 
-                src={Array.isArray(course.images) ? course.images[0] : course.images || courseThumb1} 
-                alt={course.Coursename} 
+              <img
+                src={Array.isArray(course.images) ? course.images[0] : course.images || courseThumb1}
+                alt={course.Coursename}
                 className="img-fluid"
               />
             </Link>
@@ -305,7 +305,7 @@ export const CoursesAllGrid = () => {
                     {/* <img src={book} alt="Semesters" /> */}
 <GiDuration />
                     <span className="td_opacity_7">
-                      {course.Durations || 0} 
+                      {course.Durations || 0}
                     </span>
                   </li>
                 </ul>
@@ -328,8 +328,8 @@ export const CoursesAllGrid = () => {
                     <i className="fa-regular fa-star"></i>
                     <i className="fa-regular fa-star"></i>
                     <i className="fa-regular fa-star"></i>
-                    <div 
-                      className="td_rating_percentage" 
+                    <div
+                      className="td_rating_percentage"
                       style={{ width: `${(course.Review || 0) * 20}%` }}
                     >
                       <i className="fa-solid fa-star fa-fw"></i>
@@ -342,7 +342,7 @@ export const CoursesAllGrid = () => {
                   <span className="td_heading_color td_opacity_5 td_medium">
                     {/* ({course.Review || 0}/{course.totalRatings || 5} Ratings) */}
                   {/* </span> */}
-                {/* </div> */} 
+                {/* </div> */}
                 <div
                   className="td_card_btn"
                   style={{

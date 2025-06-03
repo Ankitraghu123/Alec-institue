@@ -19,11 +19,11 @@
 //    const [members, setMembers] = useState([]);
 //     const [loading, setLoading] = useState(true);
 //     const [error, setError] = useState(null);
-  
-//     const apiUrl = 'http://localhost:8000/member/display';
-  
-   
-  
+
+//     const apiUrl = 'https://alec-institue.onrender.com/member/display';
+
+
+
 //     useEffect(() => {
 //       const fetchMembers = async () => {
 //         try {
@@ -37,10 +37,10 @@
 //           setLoading(false);
 //         }
 //       };
-  
+
 //       fetchMembers();
 //     }, []);
-  
+
 
 
 //   useHobble();
@@ -54,7 +54,7 @@
 
 //   return (
 //     <section style={{ backgroundColor:"#f8f9fa" }}  className="td_shape_section_8 td_hobble">
-      
+
 //       <div className="td_shape_position_1 position-absolute td_hover_layer_3">
 //         <img  src={Array.isArray(course.images) ? course.images[0] : course.images} alt="Team shape 1" />
 //       </div>
@@ -112,7 +112,7 @@
 //               </div>
 //             </SwiperSlide>
 //           ))}
-          
+
 //         </Swiper>
 
 //         <div className="td_height_60 td_height_lg_40" />
@@ -168,7 +168,7 @@ export const TeamOne = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  const apiUrl = 'http://localhost:8000/member/display';
+  const apiUrl = 'https://alec-institue.onrender.com/member/display';
 
   useHobble();
 
@@ -246,12 +246,12 @@ export const TeamOne = () => {
           >
             {members.map((member, idx) => (
               <SwiperSlide key={member._id || idx}>
-                <div 
-                  className="td_team td_style_1 text-center position-relative cursor:pointer" 
+                <div
+                  className="td_team td_style_1 text-center position-relative cursor:pointer"
                   onClick={handleMember(member._id)}
                 >
-                  <img 
-                    src={Array.isArray(member.images) ? member.images[0] : member.images} 
+                  <img
+                    src={Array.isArray(member.images) ? member.images[0] : member.images}
                     alt={member.Membername}
                     className="h-50 td_radius_10"
                   />

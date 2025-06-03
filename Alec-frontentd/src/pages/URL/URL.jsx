@@ -8,7 +8,7 @@
 //   const [formData, setFormData] = useState({ URL: '' });
 //   const [errors, setErrors] = useState({});
 //   const [loading, setLoading] = useState(false);
-    
+
 
 //   const handleInputChange = (e) => {
 //     const { name, value } = e.target;
@@ -40,7 +40,7 @@
 
 //     setLoading(true);
 //     try {
-//       // const response = await axios.post('http://localhost:8000/url/create', formData);
+//       // const response = await axios.post('https://alec-institue.onrender.com/url/create', formData);
 //       if (newItemTitle.trim() && newItemBody.trim()) {
 //       const newItem = {
 //         title: newItemTitle,
@@ -148,7 +148,7 @@ const URL = () => {
     try {
       // Redux के through API call
       await dispatch(addUrl({ URL: formData.URL })).unwrap();
-      
+
       toast.success('Course URL submitted successfully!');
       setFormData({ URL: '' });
     } catch (error) {

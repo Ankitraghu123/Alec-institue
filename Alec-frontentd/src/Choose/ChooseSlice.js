@@ -6,7 +6,7 @@ export const createChoose = createAsyncThunk(
   'choose/createChoose',
   async (formData, { rejectWithValue }) => {
     try {
-      const response = await axios.post('http://localhost:8000/choose/create', formData, {
+      const response = await axios.post('https://alec-institue.onrender.com/choose/create', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -25,7 +25,7 @@ export const fetchChooseItems = createAsyncThunk(
   'choose/fetchChooseItems',
   async (_, { rejectWithValue }) => {
     try {
-      const res = await axios.get(`http://localhost:8000/choose/display`);
+      const res = await axios.get(`https://alec-institue.onrender.com/choose/display`);
       return res.data;
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || err.message);
@@ -38,7 +38,7 @@ export const deleteChooseItem = createAsyncThunk(
   'choose/deleteChooseItem',
   async (id, { rejectWithValue }) => {
     try {
-      await axios.delete(`http://localhost:8000/choose/${id}`);
+      await axios.delete(`https://alec-institue.onrender.com/choose/${id}`);
       return id;
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || err.message);

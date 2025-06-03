@@ -102,8 +102,8 @@
 //   const [product, setProduct] = useState({});
 //   const [course, setCourse] = useState({});
 //   const [loading, setLoading] = useState(false);
-//   const [error, setError] = useState(false); 
-  
+//   const [error, setError] = useState(false);
+
 //   useEffect(() => {
 //     if (courseId) {
 //       axios.get(`/judement/course/${courseId}`).then((res) => {
@@ -111,12 +111,12 @@
 //       });
 //     }
 //   }, [courseId]);
-  
+
 //   useEffect(() => {
 //     const fetchProduct = async () => {
 //       try {
 //         setLoading(true);
-//         const res = await axios.get(`http://localhost:8000/judement/course/${id}`);
+//         const res = await axios.get(`https://alec-institue.onrender.com/judement/course/${id}`);
 //         setProduct(res.data);
 //       } catch (err) {
 //         console.error("Failed to fetch product", err);
@@ -157,8 +157,8 @@ export const JudgementDetails = ({ courseId }) => {
   const [product, setProduct] = useState({});
   const [course, setCourse] = useState({});
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false); 
-  
+  const [error, setError] = useState(false);
+
   useEffect(() => {
     if (courseId) {
       axios.get(`/judement/course/${courseId}`)
@@ -170,13 +170,13 @@ export const JudgementDetails = ({ courseId }) => {
         });
     }
   }, [courseId]);
-  
+
   useEffect(() => {
     const fetchProduct = async () => {
       try {
         setLoading(true);
         setError(false);
-        const res = await axios.get(`http://localhost:8000/judement/course/${id}`);
+        const res = await axios.get(`https://alec-institue.onrender.com/judement/course/${id}`);
         setProduct(res.data);
       } catch (err) {
         console.error("Failed to fetch product", err);
@@ -191,8 +191,8 @@ export const JudgementDetails = ({ courseId }) => {
   if (loading) return <div className="loading">Loading...</div>;
   if (error) return <div className="error">{error}</div>;
 
-  const sanitizedDescription = product.description 
-    ? DOMPurify.sanitize(product.description) 
+  const sanitizedDescription = product.description
+    ? DOMPurify.sanitize(product.description)
     : '';
 
   return (

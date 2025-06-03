@@ -16,34 +16,34 @@ const Blog = () => {
     LastDate: '',
     Description: ''
   });
- 
+
   const [imageFiles, setImageFiles] = useState([]);
   const [imagePreviews, setImagePreviews] = useState([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
- 
+
   const handleInput = (e) => {
     const { name, value } = e.target;
     setInput((prev) => ({ ...prev, [name]: value }));
   };
- 
+
   const handleBlogEditorChange = (event, editor) => {
     const data = editor.getData();
     setInput((prev) => ({ ...prev, Blog: data }));
   };
-  
+
   const handleDescriptionEditorChange = (event, editor) => {
     const data = editor.getData();
     setInput((prev) => ({ ...prev, Description: data }));
   };
- 
+
   const handleImageChange = (e) => {
     const files = Array.from(e.target.files);
     if (files.length + imageFiles.length > 5) {
       setError('You can upload a maximum of 5 images');
       return;
     }
- 
+
     const newPreviews = [];
     files.slice(0, 5 - imageFiles.length).forEach((file) => {
       const reader = new FileReader();
@@ -58,27 +58,27 @@ const Blog = () => {
       };
       reader.readAsDataURL(file);
     });
- 
+
     setImageFiles((prev) => [...prev, ...files.slice(0, 5 - prev.length)]);
     setError('');
   };
- 
+
   const removeImage = (index) => {
     setImageFiles((prev) => prev.filter((_, i) => i !== index));
     setImagePreviews((prev) => prev.filter((_, i) => i !== index));
   };
- 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
- 
+
     // Validate required fields
     if (!input.title || !input.Blog || !input.author || !input.Description) {
       toast.error('Please fill all required fields (Title, Blog Content, Description, and Author)');
       return;
     }
- 
+
     setLoading(true);
- 
+
     const formData = new FormData();
     formData.append('title', input.title);
     formData.append('author', input.author);
@@ -87,15 +87,15 @@ const Blog = () => {
     formData.append('Description', input.Description);
     formData.append('LastDate', input.LastDate);
     formData.append("URL",input.URL)
- 
+
     imageFiles.forEach((file) => formData.append('images', file));
- 
+
     try {
-      const api = 'http://localhost:8000/blog/create';
+      const api = 'https://alec-institue.onrender.com/blog/create';
       const response = await axios.post(api, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
- 
+
       toast.success('Blog post created successfully!');
       setInput({
         title: '',
@@ -115,7 +115,7 @@ const Blog = () => {
       setLoading(false);
     }
   };
- 
+
   return (
     <form
       onSubmit={handleSubmit}
@@ -123,7 +123,7 @@ const Blog = () => {
     >
       <ToastContainer position="top-center" />
       <h2 className="text-2xl font-bold mb-6 text-center">Create New Blog Post</h2>
- 
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
         <div>
           <label className="block mb-1 font-medium">Title*</label>
@@ -216,12 +216,12 @@ const Blog = () => {
           />
         </div>
       </div>
- 
+
       <div className="my-6">
         <label className="block text-sm font-medium text-gray-700 mb-2">
           Images (Max 5)
         </label>
- 
+
         {imagePreviews.length > 0 && (
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-4">
             {imagePreviews.map((preview, index) => (
@@ -242,7 +242,7 @@ const Blog = () => {
             ))}
           </div>
         )}
- 
+
         <label
           className={`flex items-center justify-center w-full h-32 px-4 transition bg-white border-2 border-gray-300 border-dashed rounded-md appearance-none cursor-pointer hover:border-primary-500 focus:outline-none ${
             imageFiles.length >= 5 ? 'opacity-50 cursor-not-allowed' : ''
@@ -270,9 +270,9 @@ const Blog = () => {
           />
         </label>
       </div>
- 
+
       {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
- 
+
       <button
         type="submit"
         disabled={loading}
@@ -283,5 +283,5 @@ const Blog = () => {
     </form>
   );
 };
- 
+
 export default Blog;

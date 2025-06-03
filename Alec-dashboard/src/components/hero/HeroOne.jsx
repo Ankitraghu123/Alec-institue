@@ -29,10 +29,10 @@ export const HeroOne = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-     const api = 'http://localhost:8000/query/create';
 
-    
+     const api = 'https://alec-institue.onrender.com/query/create';
+
+
     console.log("Form submitted", formData);
   };
 

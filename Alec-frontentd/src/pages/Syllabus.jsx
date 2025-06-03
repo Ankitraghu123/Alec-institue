@@ -65,7 +65,7 @@ const Syllabus = () => {
 
     try {
       setLoading(true);
-      const response = await axios.post('http://localhost:8000/syllabus/create', formData, {
+      const response = await axios.post('https://alec-institue.onrender.com/syllabus/create', formData, {
         headers: {
           Accept: 'application/json',
         },

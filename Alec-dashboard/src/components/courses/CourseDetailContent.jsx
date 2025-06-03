@@ -9,16 +9,16 @@ import axios from "axios"
 
 
 export const CourseDetailContent = ({ courseId }) => {
-  const navigate = useNavigate()  
+  const navigate = useNavigate()
   const { id } = useParams();
    const [product, setProduct] = useState([]);
-   const [error, setError] = useState(false); 
+   const [error, setError] = useState(false);
    const [course, setCourse] = useState({})
 const [loading, setLoading] = useState(false)
 
   useTabs();
 
-   
+
 
     const handleCourseClick = () => {
     navigate(`/enroll/${courseId}`);
@@ -31,7 +31,7 @@ const [loading, setLoading] = useState(false)
     const fetchProduct = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`http://localhost:8000/api/${id}`);
+        const res = await axios.get(`https://alec-institue.onrender.com/api/${id}`);
         console.log(res.data)
         setProduct(res.data);
       } catch (err) {
@@ -55,13 +55,13 @@ const [loading, setLoading] = useState(false)
               {/* video */}
                <div className="embed-responsive embed-responsive-16by9 td_radius_10 td_mb_40">
                 <iframe
-                
+
                 //  <img style={{height:"400px !important", width:"100%"}} className="embed-responsive-item mb-5 " src={product.images?.[0] || "default-course-image.jpg"}  alt="Course author" />
-                  className="embed-responsive-item" 
-                   src={product.URL} 
-                   allowFullScreen 
-                ></iframe> 
-              </div>  
+                  className="embed-responsive-item"
+                   src={product.URL}
+                   allowFullScreen
+                ></iframe>
+              </div>
 
               {/* info */}
               <span className="td_course_label td_mb_10">{product.Coursename}</span>
@@ -103,11 +103,11 @@ const [loading, setLoading] = useState(false)
 
                                   <Link
                                 to={`/pretestseries/${product?.category}`}
-                                
 
-                                
+
+
                                  className="td_btn td_style_1 td_radius_10 td_medium"
-                                 
+
                                >
                                  <span className="td_btn_in td_white_color td_accent_bg">
                                    <span>pre test series</span>
@@ -120,9 +120,9 @@ const [loading, setLoading] = useState(false)
                                 to={`/maintestseries/${product?.category}`}
                                 // to={`enroll`}
 
-                                
+
                                  className="td_btn td_style_1 td_radius_10 td_medium"
-                                 
+
                                >
                                  <span className="td_btn_in td_white_color td_accent_bg">
                                    <span>Main test series</span>
@@ -147,13 +147,13 @@ const [loading, setLoading] = useState(false)
 
                                <Link
 
-                               
+
                                 to={`/enroll/${courseId}`}
                                 // to={`enroll`}
 
-                                
+
                                  className="td_btn td_style_1 td_radius_10 td_medium"
-                                 
+
                                >
                                  <span className="td_btn_in td_white_color td_accent_bg">
                                    <span>Enroll Now</span>
@@ -214,7 +214,7 @@ const [loading, setLoading] = useState(false)
                   <li className="active">
                     <a href="#td_tab_1">Overview</a>
                   </li>
-                
+
                   <li>
                     <a href="#td_tab_2">Curriculum</a>
                   </li>
@@ -224,7 +224,7 @@ const [loading, setLoading] = useState(false)
                   <li>
                     <a href="#td_tab_4">Reviews</a>
                   </li>
-                   
+
                 </ul>
                 <div className="td_tab_body td_fs_18">
                   <div className="td_tab active" id="td_tab_1">
